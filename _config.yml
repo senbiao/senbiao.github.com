@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 森标 blog
-subtitle: 好记性不如烂键盘
-description: 好好学习，天天向上
-author: senbiao
+title: 周森标博客
+subtitle: 好好学习，天天向上
+description: 周森标博客|周森标|森标|senbiao's blog
+author: zhousenbiao
 language:
 timezone:
 
@@ -63,11 +63,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jacman
+theme: ice-hexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@senbiao.org:senbiao/senbiao.github.com.git
+  repo: https://github.com/senbiao/senbiao.github.com.git
   branch: master
