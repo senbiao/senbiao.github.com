@@ -5,7 +5,7 @@
 # Site
 title: 周森标博客
 subtitle: 好好学习，天天向上
-description: 周森标博客|周森标|森标|senbiao's blog
+description: 周森标博客|周森标|森标|senbiao blog
 author: zhousenbiao
 language:
 timezone:
@@ -69,5 +69,5 @@ theme: ice-hexo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/senbiao/senbiao.github.com.git
+  repo: https://senbiao@github.com/senbiao/senbiao.github.com.git
   branch: master
