@@ -75,7 +75,7 @@ deploy:
 backup:
     type: git
     theme: ice-hexo
-    repo:
+    repository:
        github: git@github.com:senbiao/senbiao.github.com.git,hexo
 
 
