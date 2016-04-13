@@ -1,0 +1,71 @@
+#来自作者的温馨提示：在填写设置的时候请注意要先空格，如 true不是true
+
+#导航
+name: 周森标博客 #网站名称
+logo: /img/logo.png  #logo图片，如果没放图片就显示网站名称
+site_url: http://zhousenbiao.com #网站地址
+menu: #导航栏上的菜单
+  Home: /
+  Archives: /archives
+  GuestBook: /guestbook
+  About: /about
+rss: /atom.xml
+
+
+# Content
+excerpt: true
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right #侧边栏位置
+widgets:
+- text
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+- links
+
+
+# Miscellaneous
+google_analytics:
+favicon: /img/favicon.png #设置图标
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+#多说插件，第一个参数是短域名，第二个是是否开启评论功能
+duoshuo_shortname: senbiao 
+duoshuo_switch: true
+
+#移动设备的自适应增强
+adaptive: true
+
+#seo优化
+keywords: 周森标,周森标博客,森标,森标的博客,senbiao blog,java,php,python,IT,云计算
+description: 周森标个人的IT技术博客，记录技术学习过程，研究过程，记录生活的感悟
+
+#CDN地址
+cdn_url: http://cdn.besdlab.cn/
+
+#统计代码
+analytics:
+
+#百度分享功能
+share: true
+
+
+#主题增加的挂件设置
+#友情链接
+links: true
+links_url:
+  Home: /
+  Archives: /archives
+  Baidu: http://baidu.com
+  巨二博客: http://ijuer.com/
+  坏坏博客: http://www.ihuaihuai.com/
+  刘洋的博客: http://www.lyblog.net/
+  刘静的博客: http://upliu.net/
