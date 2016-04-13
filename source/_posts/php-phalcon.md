@@ -4,7 +4,7 @@ id: 8
 categories:
   - Phalcon
 date: 2013-01-31 23:04:12
-tags:
+tags: PHP
 ---
 
 <span style="font-size: small;"><span style="font-size: small;"><span style="font-family: 宋体;"><span lang="EN-US">&nbsp;&nbsp;&nbsp;Phalcon是一个开源的，全堆栈的，用C语言写成的php5框架，高性能的php扩展。同时Phalcon是松耦合的，也可以根据需要使用其他组件。</span></span></span></span>

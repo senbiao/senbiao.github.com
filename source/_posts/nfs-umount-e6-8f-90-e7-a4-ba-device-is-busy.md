@@ -2,9 +2,9 @@
 title: 'NFS umount 提示 device is busy '
 id: 255
 categories:
-  - ClousStack
+  - CloudStack
 date: 2015-10-13 02:34:36
-tags:
+tags: JAVA
 ---
 
 [root@node11 SecStorage]# umount /mnt/SecStorage/

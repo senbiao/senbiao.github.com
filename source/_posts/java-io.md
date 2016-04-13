@@ -2,10 +2,9 @@
 title: java笔记——IO操作小结
 id: 166
 categories:
-  - JAVA开发
-  - 软件开发
+  - software
 date: 2015-09-20 07:52:42
-tags:
+tags: JAVA
 ---
 
 1.FileWriter与BufferedWriter的区别

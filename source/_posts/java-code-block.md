@@ -4,8 +4,7 @@ tags:
   - java
 id: 174
 categories:
-  - JAVA开发
-  - 软件开发
+  - software
 date: 2015-02-05 05:11:08
 ---
 

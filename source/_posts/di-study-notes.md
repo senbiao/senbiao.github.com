@@ -4,7 +4,7 @@ id: 11
 categories:
   - Phalcon
 date: 2013-02-02 10:14:56
-tags:
+tags: PHP
 ---
 
 <span lang="EN-US"><span style="mso-tab-count: 1;"><span style="font-family: Times New Roman;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span></span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">在</span><span lang="EN-US"><span style="font-family: Times New Roman;">Phalcon</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">使用手册中有谈到&ldquo;使用依赖注入&rdquo;，依赖注入的概念，对于学过</span><span lang="EN-US"><span style="font-family: Times New Roman;">JAVA</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">的人来说，应该比较熟悉。依赖注入（</span><span style="font-size: 10pt;" lang="EN-US"><span style="font-family: Times New Roman;">Dependency Injection</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">，简称</span><span lang="EN-US"><span style="font-family: Times New Roman;">DI</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">），早期被称作控制反转（</span><span style="font-size: 10pt;" lang="EN-US"><span style="font-family: Times New Roman;">Inversion of control</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">，简称</span><span lang="EN-US"><span style="font-family: Times New Roman;">IOC</span></span><span style="font-family: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman';">）。</span>

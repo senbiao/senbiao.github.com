@@ -2,10 +2,9 @@
 title: cloudstack二次开发——配置Debug端口
 id: 261
 categories:
-  - ClousStack
-  - 云计算
+  - CloudStack
 date: 2015-10-15 08:33:03
-tags:
+tags: JAVA
 ---
 
 ## <span style="font-size: 16px;">1.manage:</span>

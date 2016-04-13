@@ -3,10 +3,10 @@ title: 单例模式学习笔记
 tags:
   - C++
   - 设计模式
+  - Design-pattern
 id: 51
 categories:
   - 设计模式
-  - 软件开发
 date: 2013-07-31 11:37:05
 ---
 

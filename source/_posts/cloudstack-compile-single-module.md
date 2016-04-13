@@ -2,10 +2,9 @@
 title: cloudstack二次开发——编译单个模块来升级系统
 id: 264
 categories:
-  - ClousStack
-  - 云计算
+  - CloudStack
 date: 2015-10-15 08:53:42
-tags:
+tags: JAVA
 ---
 
 cloudstack二次开发中，当修改了代码时，需要重新编译，此时编译整个cloudstack尤为不便:
