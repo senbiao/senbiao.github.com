@@ -7,8 +7,8 @@ title: 周森标博客
 subtitle: 好好学习，天天向上
 description: 周森标博客|周森标|森标|senbiao blog
 author: zhousenbiao
-language:
-timezone:
+language: zh-CN #语言
+timezone: Asia/Shanghai #时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
