@@ -9,7 +9,8 @@ menu: #导航栏上的菜单
   Archives: /archives
   GuestBook: /guestbook
   About: /about
-rss: /atom.xml
+  SiteMap: /sitemap.xml
+  rss: /atom.xml
 
 
 # Content
