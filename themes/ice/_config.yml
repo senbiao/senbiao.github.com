@@ -10,8 +10,7 @@ menu: #导航栏上的菜单
   GuestBook: /guestbook
   About: /about
   SiteMap: /sitemap.xml
-  rss: /atom.xml
-
+  Rss: /atom.xml
 
 # Content
 excerpt: true
@@ -70,3 +69,4 @@ links_url:
   坏坏博客: http://www.ihuaihuai.com/
   刘洋的博客: http://www.lyblog.net/
   刘静的博客: http://upliu.net/
+  Links: /links

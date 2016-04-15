@@ -16,6 +16,8 @@
     "hexo-renderer-marked": "^0.2.10",
     "hexo-server": "^0.2.0",
     "hexo-deployer-git": "^0.1.0",
-    "hexo-git-backup": "^0.1.2"
+    "hexo-git-backup": "^0.1.2",
+    "hexo-generator-feed": "^1.1.0",
+    "hexo-generator-sitemap": "^1.1.2"
   }
 }
