@@ -3,7 +3,7 @@
 #导航
 name: 周森标博客 #网站名称
 logo: /img/logo.png  #logo图片，如果没放图片就显示网站名称
-site_url: http://zhousenbiao.com #网站地址
+site_url: http://senbiao.org #网站地址
 menu: #导航栏上的菜单
   Home: /
   Archives: /archives
