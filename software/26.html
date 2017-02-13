@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+   
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+     
+  
+  <title>提高PHP编程效率的技巧小结 | 周森标博客</title>
+  <meta name="keywords" content="周森标,周森标博客,森标,森标的博客,senbiao blog,java,php,python,IT,云计算 提高PHP编程效率的技巧小结 undefined" />
+    <meta name="description" content="周森标个人的IT技术博客，记录技术学习过程，研究过程，记录生活的感悟" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用单引号代替双引号来包含字符串，这样做会更快一些。因为PHP会在双引号包围的字符串中搜寻变量，单引号则不会，注意：只有echo能这么做，它是一种可以把多个字符串当作参数的&amp;ldquo;函数&amp;rdquo;(译注：PHP手册中说echo是语言结构，不是真正的函数，故把函数加上了双引号)。
+　　1、如果能将类的方法定义成static，就尽量定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提高PHP编程效率的技巧小结">
+<meta property="og:url" content="http://senbiao.org/software/26.html">
+<meta property="og:site_name" content="周森标博客">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用单引号代替双引号来包含字符串，这样做会更快一些。因为PHP会在双引号包围的字符串中搜寻变量，单引号则不会，注意：只有echo能这么做，它是一种可以把多个字符串当作参数的&amp;ldquo;函数&amp;rdquo;(译注：PHP手册中说echo是语言结构，不是真正的函数，故把函数加上了双引号)。
+　　1、如果能将类的方法定义成static，就尽量定">
+<meta property="og:updated_time" content="2017-02-13T02:14:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="提高PHP编程效率的技巧小结">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用单引号代替双引号来包含字符串，这样做会更快一些。因为PHP会在双引号包围的字符串中搜寻变量，单引号则不会，注意：只有echo能这么做，它是一种可以把多个字符串当作参数的&amp;ldquo;函数&amp;rdquo;(译注：PHP手册中说echo是语言结构，不是真正的函数，故把函数加上了双引号)。
+　　1、如果能将类的方法定义成static，就尽量定">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <!--引用ICSCSS-->
+  <link href="http://cdn.besdlab.cn/icecss/icecss.min.css" rel="stylesheet" type="text/css">
+      <script src="http://cdn.besdlab.cn/jquery/2.1.1/jquery.2.1.1.min.js"></script>
+      <script src="http://cdn.besdlab.cn/icecss/icecss.js"></script>
+      <script src="http://cdn.besdlab.cn/icecss/plugin/ice_click.js"></script>
+      <script>
+      ice_click.init();
+      </script>
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <style>
+.widget{
+  background: none; 
+ -webkit-box-shadow: none; 
+box-shadow: none;
+-webkit-border-radius:0px; 
+border-radius: 0px; 
+}
+  .ice-main-nav{
+    background: url("/img/ice-icon-menu.svg") no-repeat center center;
+  }
+ .ice-menu-logo a:hover{
+    background: none;
+  }
+
+      @media only screen and (min-width: 768px) {
+     .ice-main-nav {
+         width: auto;
+         height: auto;
+         background: none;
+         cursor: auto;
+     }
+   }
+</style>
+<header class="ice-menu ice-menu-hover">
+<div class="ice-menu-logo" style="font-family:'Microsoft YaHei'">
+ 
+     <a href="http://zhousenbiao.com"><img src="/img/logo.png" style="height:100%"></a>
+     <style>
+       .ice-menu-logo{
+    background: none;
+  }</style>
+     
+
+</div>
+
+<nav class="ice-main-nav">
+<ul>
+
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives">Archives</a></li>
+        
+          <li><a href="/guestbook">GuestBook</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+          <li><a href="/sitemap.xml">SiteMap</a></li>
+        
+          <li><a href="/atom.xml">Rss</a></li>
+        
+</ul>
+</nav>
+</header> 
+      <div class="outer">
+        <section id="main"><article id="post-26" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/software/26.html" class="article-date">
+  <time datetime="2013-02-15T05:58:26.000Z" itemprop="datePublished">2013-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      提高PHP编程效率的技巧小结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用单引号代替双引号来包含字符串，这样做会更快一些。因为PHP会在双引号包围的字符串中搜寻变量，单引号则不会，注意：只有echo能这么做，它是一种可以把多个字符串当作参数的&ldquo;函数&rdquo;(译注：PHP手册中说echo是语言结构，不是真正的函数，故把函数加上了双引号)。</p>
+<p>　　1、如果能将类的方法定义成static，就尽量定义成static，它的速度会提升将近4倍。</p>
+<p>　　2、$row[&rsquo;id&rsquo;] 的速度是$row[id]的7倍。</p>
+<p>　　3、echo 比 print 快，并且使用echo的多重参数(译注：指用逗号而不是句点)代替字符串连接，比如echo $str1,$str2。</p>
+<p>　　4、在执行for循环之前确定最大循环数，不要每循环一次都计算最大值，最好运用foreach代替。</p>
+<p>　　5、注销那些不用的变量尤其是大数组，以便释放内存。</p>
+<p>　　6、尽量避免使用<strong>get，</strong>set，__autoload。</p>
+<p>　　7、require_once()代价昂贵。</p>
+<p>　　8、include文件时尽量使用绝对路径，因为它避免了PHP去include_path里查找文件的速度，解析操作系统路径所需的时间会更少。</p>
+<p>　　9、如果你想知道脚本开始执行(译注：即服务器端收到客户端请求)的时刻，使用$_SERVER[&lsquo;REQUEST_TIME&rsquo;]要好于time()。</p>
+<p>　　10、函数代替正则表达式完成相同功能。</p>
+<p>　　11、str_replace函数比preg_replace函数快，但strtr函数的效率是str_replace函数的四倍。</p>
+<p>　　12、如果一个字符串替换函数，可接受数组或字符作为参数，并且参数长度不太长，那么可以考虑额外写一段替换代码，使得每次传递参数是一个字符，而不是只写一行代码接受数组作为查询和替换的参数。</p>
+<p>　　13、使用选择分支语句(译注：即switch case)好于使用多个if，else if语句。</p>
+<p>　　14、用@屏蔽错误消息的做法非常低效，极其低效。</p>
+<p>　　15、打开apache的mod_deflate模块，可以提高网页的浏览速度。</p>
+<p>　　16、数据库连接当使用完毕时应关掉，不要用长连接。</p>
+<p>　　17、错误消息代价昂贵。</p>
+<p>　　18、在方法中递增局部变量，速度是最快的。几乎与在函数中调用局部变量的速度相当。</p>
+<p>　　19、递增一个全局变量要比递增一个局部变量慢2倍。</p>
+<p>　　20、递增一个对象属性(如：$this-&gt;prop++)要比递增一个局部变量慢3倍。</p>
+<!--内容关联投票-->
+
+      
+    </div>
+    <footer class="article-footer">
+     
+      <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/生活随记/27.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          明天见
+        
+      </div>
+    </a>
+  
+  
+    <a href="/生活随记/go-to-bed-early.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">晚上早点歇息</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+  
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-26" data-title="提高PHP编程效率的技巧小结" data-url="http://senbiao.org/software/26.html"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'senbiao'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
+        
+          <aside id="sidebar">
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CloudStack/">CloudStack</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Erlang开发/">Erlang开发</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Phalcon/">Phalcon</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/software/">software</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/summary/">summary</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源框架/">开源框架</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏开发/">游戏开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活随记/">生活随记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络分享/">网络分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络营销/">网络营销</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/风云印象/">风云印象</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/">.NET</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-pattern/">Design-pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Erlang/">Erlang</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT名人堂/">IT名人堂</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-游戏开发/">android 游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb-net/">vb.net</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webservice/">webservice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/人物/">人物</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电脑问题/">电脑问题</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/C/" style="font-size: 12.5px;">C++</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Design-pattern/" style="font-size: 10px;">Design-pattern</a> <a href="/tags/Erlang/" style="font-size: 12.5px;">Erlang</a> <a href="/tags/IT名人堂/" style="font-size: 12.5px;">IT名人堂</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/android-游戏开发/" style="font-size: 10px;">android 游戏开发</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/vb-net/" style="font-size: 10px;">vb.net</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/人物/" style="font-size: 10px;">人物</a> <a href="/tags/服务器/" style="font-size: 12.5px;">服务器</a> <a href="/tags/电脑问题/" style="font-size: 15px;">电脑问题</a> <a href="/tags/网站建设/" style="font-size: 10px;">网站建设</a> <a href="/tags/设计模式/" style="font-size: 12.5px;">设计模式</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">十一月 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">十月 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">九月 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">八月 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">三月 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/CloudStack/cloudstack-Source-framework-analysis.html">cloudstack源码架构解析，二次开发必备</a>
+          </li>
+        
+          <li>
+            <a href="/summary/from-wordpress-to-hexo.html">from wordpress to hexo</a>
+          </li>
+        
+          <li>
+            <a href="/CloudStack/cloudstack-compile-single-module.html">cloudstack二次开发——编译单个模块来升级系统</a>
+          </li>
+        
+          <li>
+            <a href="/CloudStack/cloudstack-debug-port.html">cloudstack二次开发——配置Debug端口</a>
+          </li>
+        
+          <li>
+            <a href="/CloudStack/cannot-open-file-etccloudstackmanagementtomcat6-conf.html">cannot open file /etc/cloudstack/management/tomcat6.conf</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">LINKS</h3>
+    <div class="widget">
+    <ul>
+     
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives">Archives</a></li>
+        
+          <li><a href="http://baidu.com">Baidu</a></li>
+        
+          <li><a href="http://ijuer.com/">巨二博客</a></li>
+        
+          <li><a href="http://www.ihuaihuai.com/">坏坏博客</a></li>
+        
+          <li><a href="http://www.lyblog.net/">刘洋的博客</a></li>
+        
+          <li><a href="http://upliu.net/">刘静的博客</a></li>
+        
+          <li><a href="/links">Links</a></li>
+        
+        </ul>
+    </div>
+  </div>
+
+  
+
+</aside>
+
+
+        
+      </div>
+      <footer style="color:#fff;">
+  
+  <div class="ice-div ice-div-1-1" style="height:60px;background: #2c3d4f;line-height:60px;padding-left:20px">
+  	Powered by <a href="http://hexo.io/">Hexo</a> Theme by <a href="http://www.besdlab.cn">BESD</a>
+  </div>
+</footer>
+    </div>
+    
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

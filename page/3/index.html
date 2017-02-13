@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+   
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+     
+  
+  <title>周森标博客</title>
+  <meta name="keywords" content="周森标,周森标博客,森标,森标的博客,senbiao blog,java,php,python,IT,云计算 undefined undefined" />
+    <meta name="description" content="周森标个人的IT技术博客，记录技术学习过程，研究过程，记录生活的感悟" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="周森标博客|周森标|森标|森标的博客|senbiao&apos;s blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="周森标博客">
+<meta property="og:url" content="http://senbiao.org/page/3/index.html">
+<meta property="og:site_name" content="周森标博客">
+<meta property="og:description" content="周森标博客|周森标|森标|森标的博客|senbiao&apos;s blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周森标博客">
+<meta name="twitter:description" content="周森标博客|周森标|森标|森标的博客|senbiao&apos;s blog">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <!--引用ICSCSS-->
+  <link href="http://cdn.besdlab.cn/icecss/icecss.min.css" rel="stylesheet" type="text/css">
+      <script src="http://cdn.besdlab.cn/jquery/2.1.1/jquery.2.1.1.min.js"></script>
+      <script src="http://cdn.besdlab.cn/icecss/icecss.js"></script>
+      <script src="http://cdn.besdlab.cn/icecss/plugin/ice_click.js"></script>
+      <script>
+      ice_click.init();
+      </script>
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <style>
+.widget{
+  background: none; 
+ -webkit-box-shadow: none; 
+box-shadow: none;
+-webkit-border-radius:0px; 
+border-radius: 0px; 
+}
+  .ice-main-nav{
+    background: url("/img/ice-icon-menu.svg") no-repeat center center;
+  }
+ .ice-menu-logo a:hover{
+    background: none;
+  }
+
+      @media only screen and (min-width: 768px) {
+     .ice-main-nav {
+         width: auto;
+         height: auto;
+         background: none;
+         cursor: auto;
+     }
+   }
+</style>
+<header class="ice-menu ice-menu-hover">
+<div class="ice-menu-logo" style="font-family:'Microsoft YaHei'">
+ 
+     <a href="http://zhousenbiao.com"><img src="/img/logo.png" style="height:100%"></a>
+     <style>
+       .ice-menu-logo{
+    background: none;
+  }</style>
+     
+
+</div>
+
+<nav class="ice-main-nav">
+<ul>
+
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives">Archives</a></li>
+        
+          <li><a href="/guestbook">GuestBook</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+          <li><a href="/sitemap.xml">SiteMap</a></li>
+        
+          <li><a href="/atom.xml">Rss</a></li>
+        
+</ul>
+</nav>
+</header> 
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-91" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/software/91.html" class="article-date">
+  <time datetime="2014-12-24T05:12:44.000Z" itemprop="datePublished">2014-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/software/91.html">java的jar包相关问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、使用javac java命令时如何导入需要的lib</p>
+<p>在开发java类时，用到了别的jar包,可以使用-classpath或者-cp参数来导入这些包</p>
+<p>例如：写了个类C:\Test.java，它用到的lib分别是D:\abc.jar和E:\efg.jar，则编译和运行命令：</p>
+<p>javac -cp D:\abc.jar;E:\efg.jar; C:\Test.java</p>
+<p>java -cp D:\abc.jar;E:\efg.jar; C:\Test</p>
+<p>注意：最后一个;后面必须要用空格把这个类和lib包分开。linux下，需要把;替换成：路径当然也要替换成linux格式的。</p>
+<p>二、如何把.class文件打包成jar包</p>
+<p>第一步：编写并准备java类</p>
+<p>第二步：编译该java类为对应的class</p>
+<p>第三步：使用jar命令进行打包</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1，没有main函数，不需要直接运行的：jar cvf xx.jar 包/A.class 包/B.class 。。。（多了可用*）</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2，有main函数，需要运行的，需要创建一个清单文件manifest.mf内容如下：</p>
+<p>Manifest-Version: 1.0</p>
+<p>Created-By: 1.5.0_06</p>
+<p>Main-Class: 包.Main类 （注意：后面一定要会车）</p>
+<p>打包命令：jar -cvfm xx.jar manifest.mf 包/Main类.class</p>
+<p>第四步：通过java -jar xx.jar进行运行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-90" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/software/90.html" class="article-date">
+  <time datetime="2014-06-09T12:14:05.000Z" itemprop="datePublished">2014-06-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/software/90.html">error MSB8008: 指定的平台工具集(v120)未安装或无效</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于昨天安装了vs2013，今天卸载了并装上vs2010，然后运行项目就出现了这样的错误：</p>
+<p>error MSB8008: 指定的平台工具集(v120)未安装或无效。请确保选择受支持的 PlatformToolset 值。</p>
+<p>解决方法：</p>
+<p>指定的平台工具集(v120) –&gt;该参数修改为V100.</p>
+<p>修改方法：</p>
+<p>Project &gt; Properties &gt; Configuration Properties &gt; General (General) &gt; Platform Toolset &gt;&gt; v100</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-89" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/software/89.html" class="article-date">
+  <time datetime="2014-04-26T14:25:08.000Z" itemprop="datePublished">2014-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/software/89.html">VC++报错“fatal error C1083:Cannot open source file:”的解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>错误现象：fatal &nbsp; error &nbsp; C1083: &nbsp; Cannot &nbsp; open &nbsp; source &nbsp; file: &nbsp; ‘D:\Program &nbsp; Files\Microsoft &nbsp; Visual &nbsp; Studio\VC98\MFC\SRC\APPMODUL.CPP ‘</p>
+<p>原因一：VC的安装路径改变了。</p>
+<p>例如：你用VC写好了一个项目。后来把VC卸载了，又安装到其他文件夹里。再用VC运行该项目，就会报此错误，因为编译系统找不到APPMODUL.CPP。</p>
+<p>原因二：把别人的项目拿来用，但是你所用电脑上VC所安装的位置和原作者的不一样，也会出现这样的错误。</p>
+<p>解决方法：在源程序文件夹里找到以&ldquo;.dsp&rdquo;为后缀的文件（比如：test.dsp），用记事本打开；找到SOURCE=”D:(注：具体目录不一定是唯一的)\VC98\MFC\SRC\APPMODUL.CPP”，改成你”APPMODUL.CPP”文件的路径。例如：C:\Program &nbsp; Files\Microsoft &nbsp; Visual &nbsp; Studio\VC98\MFC\SRC\APPMODUL.CPP</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-88" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Erlang开发/88.html" class="article-date">
+  <time datetime="2014-04-19T14:50:16.000Z" itemprop="datePublished">2014-04-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Erlang开发/">Erlang开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Erlang开发/88.html">Erlang虚拟机常用启动参数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="clear">在接触Erlang过程中，了解到Erlang虚拟机的一些常用启动参数。Erlang启动参数有3种：emulator flags, flags 和plain arguments。这里暂且看emulator flags ，它是以&ldquo;+&rdquo;开头的，用来控制模拟器的行为。</div><br><div id="note_218650479_short" class="note" style="display: none;">&nbsp;</div><br><div id="note_218650479_full"><br><div id="link-report" class="note">+a size<br>系统栈大小， 默认16KB<br><br>+A size<br>异步线程池大小， 默认为0<br><br>+d<br>系统错误不生成crash文件<br><br>+e Number<br>ETS表最大数量<br><br>+K true | false<br>是否启用操作系统的poll机制<br><br>+P Number<br>最大并发线程数<br><br>+l<br>自动载入启动跟踪器并显示<br><br>+W w | i<br>设置error_logger的警告信息<br><br>例子:<br>erl +K true +A 4 +a 64 +e 100 +d -name sharp_stream@127.0.0.1 -pa ebin -pa apps/<em>/ebin -pa deps/</em>/ebin -boot start_sasl -s sharp_stream -sasl errlog_type error</div><br></div>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Erlang/">Erlang</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-87" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Erlang开发/87.html" class="article-date">
+  <time datetime="2014-04-11T10:05:47.000Z" itemprop="datePublished">2014-04-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Erlang开发/">Erlang开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Erlang开发/87.html">Erlang入门实例程序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#vi geometry.erl</p>
+<p>%% —注释<br>%%  Excerpted from “Programming Erlang”<br>%%—</p>
+<p>-module(geometry).<br>-export([area/1]).</p>
+<p>area({rectangle, Width, Height}) -&gt; Width <em> Height;<br>area({square, X})                -&gt; X </em> X;<br>area({circle, R})                -&gt; 3.14159 <em> R </em> R.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Erlang/">Erlang</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-86" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Erlang开发/86.html" class="article-date">
+  <time datetime="2014-04-11T08:49:42.000Z" itemprop="datePublished">2014-04-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Erlang开发/">Erlang开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Erlang开发/86.html">Erlang当前的工作空间路径的修改方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>请看下面的一个例子：</p>
+<p>-module(hello).</p>
+<p>-compile(export_all).</p>
+<p>start()-&gt;”hello world”.</p>
+<p>然后在Erlang Shell中进行编译hello.erl源文件：</p>
+<p>1&gt; c(hello). &nbsp; &nbsp;</p>
+<p>有可能会发生如下的错误：</p>
+<p>./hello.erl:none: no such file or directory</p>
+<p>error</p>
+<p>&nbsp; &nbsp; &nbsp; hello.erl文件无法找到，hello.erl源文件应该被在哪个目录下才可以被Erlang编译器找到？对于 Windows用户来说，用户点击Erlang图标启动的Erlang Shell的工作路径是Erlang安装目录下的usr目录下，将hello.erl源文件copy到该目录下就可以直接用 c(hello)命令进行编译了，其中的hello为模块名称，即为不带.erl扩展名的源文件名。</p>
+<p>&nbsp; &nbsp; &nbsp; 如果不想以该目录作为默认工作目录，则可以在Erlang图标点右击鼠标，选择弹出菜单项&ldquo;属性&rdquo;，然后修改&ldquo;Erlang 属性&rdquo;对话框中 &ldquo;起始位置&rdquo;的值，原值为&ldquo;(Erlang安装路径)\usr&rdquo;，改为你想要的工作目录值即可。</p>
+<p>&nbsp; &nbsp; &nbsp; 通过执行以下命名可以查询当前的Erlang工作目录：</p>
+<p>2&gt; pwd().</p>
+<p>e:/erl5.9.1/usr</p>
+<p>ok</p>
+<p>&nbsp; &nbsp; &nbsp; 请注意pwd()返回的目录名称与标准的Windows目录名并不一样，使用的是正斜杠分隔符&ldquo;/&rdquo;，如果想在Erlang Shell中切换当前的工作目录，则可以使用以下命令：</p>
+<p>3&gt; cd(“e:/ErlangWork”).</p>
+<p>e:/ErlangWork</p>
+<p>ok</p>
+<p>&nbsp; &nbsp; &nbsp; cd(dir)命令中的工作目录名同样是使用正斜杠分隔符&ldquo;/&rdquo;，而不能使用Windows标准的反斜杠分隔符&ldquo;\&rdquo;，如果你使用Windows标准目录名，则cd(dir)命令执行时不会提示有使用错误信息，则并没有正确切换到新的工作目录中。</p>
+<p>&nbsp; &nbsp; &nbsp; 如果在命令行模式下执行erl.exe直接进入Erlang Shell的话，则当前目录即为Erlang的工作目录，而不会受Erlang图标属性中的&ldquo;起始位置&rdquo;设置的影响，如果想用户在任何方式进入 Erlang Shell时都自动切换到指定的工作目录，则可以在用户目录中的编辑一个.erlang文件：</p>
+<p>c:cd(“e:/ErlangWork”).</p>
+<p>io:format(“My new work in: ~p!n”, [element(2, file:get_cwd())]).</p>
+<p>&nbsp; &nbsp; &nbsp; 这里所指用户目录一般为C:\Documents and Settings(当前登录用户名)，比如当前你以ITuser账号登录Windows系统，则用户目录为C:\Documents and Settings\ITuser，该文件在Windows平台下，可以理解成一个只有扩展名没有文件名的文件，这样的文件在Windows的文件浏览器 中可以进行一般的浏览、删除操作，但无法将一个正常的文件名重命名成这样的文件，所以一般需要用记事本将以上代码编辑进一个空文档中，然后另存文件，选择 保存类型为&ldquo;所有文件&rdquo;，文件名为&ldquo;.erlang&rdquo;进行保存。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-85" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/生活随记/85.html" class="article-date">
+  <time datetime="2014-01-25T18:01:27.000Z" itemprop="datePublished">2014-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/生活随记/">生活随记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/生活随记/85.html">静夜之思</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>身在异国他乡的我，在这宁静的夜晚，第一次如此刻骨铭心的想家&hellip;想着爸妈，想着老妹，想着他们的各种唠叨，想着他们的音容笑貌&hellip;算是第一次出远门，从最初的期待与忐忑，到兴奋与迷茫，到新奇与不安，再到心如止水，再到归心似箭&hellip;都说&ldquo;别人的金窝银窝，不如自家的狗窝&rdquo;，我是真心想家了&hellip;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-84" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/software/84.html" class="article-date">
+  <time datetime="2013-12-31T15:56:19.000Z" itemprop="datePublished">2013-12-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/software/84.html">使纯文本自动转换为Web网页的方法（用php实现）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如何将纯文本自动转换为Web网页？以下是使用php语言进行实现的方法。</p>
+<p>首先是把纯ASCII文件读取到一个PHP数组中。通过file()函数可以完成，这个函数会把文件的每一行都转换成为一个用数字索引的数组中的元素。然后，标题和作者行(假设这两个都是文件的前两行)都通过array_shift()函数从数组里提取出来，放到单独的变量里。数组剩下的成员然后连接成一个字符串。这个字符串现在就包括了整篇文章的正文。文章正文里像&ldquo;’&rdquo;、&ldquo;&lt;&rdquo;和&ldquo;&gt;&rdquo;这样的特殊符号通过htmlspecialchars()函数被转换成相应的HTML符号。为了保留文章的原始格式，分行和分段通过nl2br()函数被转换成HTML的元素。文章中间多个空格通过简单的字符串替换被压缩成为一个空格。</p>
+<p>文章正文里的URL用正则表达式来检测，两边是元素。当页面在Web浏览器里显示的时候，它会把URL转换成为可点击的超链接。</p>
+<p>然后用标准的HTML规则创建输出的HTML页面。文章的标题、作者和正文都用CSS样式规则格式化。尽管这段脚本没有这样做，但是你可以在这个地方自定义最终页面的外观，你可以向模板添加图形元素、颜色或者其他眩目的内容。</p>
+<p>一旦HTML页面构建完成，它就可以被送到浏览器或者用file_put_contents()保存为静态文件。要注意的是，在保存的时候，原来的文件名会被分解，一个新的文件名(叫做filename.html)会为新创建的Web页面创建。然后就可以把这个Web页面发布到Web服务器上、保存到光盘上或者对它进行进一步编辑。</p>
+<p>注意：在使用这个脚本创建和保存HTML文件到磁盘的时候，要确保这个脚本对文件保存的目录有写权限。</p>
+<p>若有标准格式的ASCII纯文本数据文件，你可以相当迅速用PHP把它转换成为可使用的Web页面。如果你已经有了一个Web网站，并计划把新的Web页面加入进来，那么调试页面生成器所使用的模板，使之适应原有Web网站的外观是相当容易的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-82" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/software/82.html" class="article-date">
+  <time datetime="2013-11-07T14:59:49.000Z" itemprop="datePublished">2013-11-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/software/">software</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/software/82.html">解决eclipse中Invalid project description.&#39;xxx&#39; overlaps the location of another project: &#39;xxxx&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp; &nbsp; &nbsp; 导入一个android源码项目时，出现如下错误信息：</p>
+<p>&nbsp; &nbsp; &nbsp; Invalid project description</p>
+<p>&nbsp; &nbsp; &nbsp; ——&gt;detail: -&gt;&gt;&gt;Invalid project description. xxxx(project path) overlaps the location of another project: ‘xxxx’</p>
+<p>&nbsp; &nbsp; &nbsp; 最后发现是我把源码把放到了workspace目录下了的原因导致的。</p>
+<p>&nbsp; &nbsp; &nbsp; eclipse在创建项目的时候需要在workspace目录下创建一个同名的目录。</p>
+<p>&nbsp; &nbsp; &nbsp; 但发现workspace目录下已存在对应的目录时，就会报上面的处错误信息了。</p>
+<p>&nbsp; &nbsp; &nbsp; 解决办法，就是将源码包移到非workspace目录下。</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; 另外，有时候目录下确实没有同名的项目文件夹，但也会报这样的错误。最后发现是备份在那儿的rar压缩文件所致，移出目录后问题成功解决。原来连压缩的文件内含有重名也不行，这是无语啊。</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+  
+  
+    <article id="post-81" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/游戏开发/81.html" class="article-date">
+  <time datetime="2013-11-04T09:51:28.000Z" itemprop="datePublished">2013-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/游戏开发/">游戏开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/游戏开发/81.html">游戏动态画面开发基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; 游戏中的动态元素如角色移动、爆炸、过场等特效，这些动画的形成，有两种方式：系统提供Animation类的特效和自己手动实现。</p>
+<p>1.Animation动画</p>
+<p>分为四种效果：</p>
+<p>AlphaAnimation：透明度渐变动画；</p>
+<p>AcaleAnimation：渐变尺寸缩放动画；</p>
+<p>TranslateAnimation：移动动画；</p>
+<p>RotateAnimation：旋转动画。</p>
+<p>动画创建：</p>
+<p>Animation alphaA = new AlphaAnimation(float fromAlpha,float toAlpha)</p>
+<p>Animation scaleA = new ScaleAnimation(float fromX,float toX,float fromY,float&nbsp;toY,int pivotXType,float pivotXValue,int pivotYType,float pivotYValue)</p>
+<p>Animation translateA = new TranslateAnimation(float fromXDelta,float&nbsp;toXDelta,float fromYDelta,float toYDelta)</p>
+<p>Animation rotateA = new RotateAnimation(float fromDegrees,float toDegrees,int&nbsp;pivotXType,float pivotXValue,int pivotYType,float pivotYValue)</p>
+<p>&nbsp; &nbsp; &nbsp; 在Animation中的四种动画创建都是new出来的，根据参数的不同可以构造出不同的动画效果。它们都有一些通用的方法：restart(),重新播放动画；setDuration(int time),设置动画播放时间，单位是毫秒。</p>
+<p>&nbsp; &nbsp; &nbsp; 除了以上四种特效之外，View还为特效提供了监听器。首先实现</p>
+<p>android.view.Animation.AnimationListenter接口，然后重新该接口的3个抽象类：</p>
+<pre class="prettyprint linenums bush:java" lang="java">@Override
+
+public void onAnimationStart(Animation animation){
+
+    //动画开始时响应的函数
+
+}
+
+@Override
+
+public void onAnimationEnd(Animation animation){
+
+    //动画结束时响应的函数
+
+}
+
+@Override
+
+public void onAnimationRepeat(Animation animation){
+
+    //动画重播时响应的函数
+
+}</pre>
+
+<p>&nbsp; &nbsp; 三个函数监听动画的不同状态，其中三个函数的参数都表示当前播放的或者播放结束的动画实例；通过此参数可以对多个设置监听的动画进行判断和匹配。</p>
+<p>&nbsp; &nbsp; 最后使用动画实例Animation.setAnimationListener(AnimationListener listener)设置动画监听器即可。</p>
+<p>2.自定义动画</p>
+<p>（1）动态位图</p>
+<p>只要不断改变位图的X或者Y轴的坐标，即可让一张位图形成动态的效果。</p>
+<p>注意，使用SurfaceView的话，只有在视图执行完构造函数之后才可获取视图的宽高，在此之前获取的屏幕宽高都为0，原因是SurfaceView视图还没创建。</p>
+<p>（2）帧动画</p>
+<p>利用多帧图形形成的动画，帧动画其实就是多帧图形一帧一帧按照一定的顺序播放而形成的。</p>
+<p>（3）剪切图动画</p>
+<p>&nbsp; &nbsp; 类似于帧动画的形式，唯一的区别就是动态物体的动作帧全部放在了一张图片中，然后再通过设置可视区域完成。</p>
+<p>&nbsp; &nbsp; 程序逻辑中一直让当前帧不断循环变化，这样每次重绘画布都会显示不同的帧，从而达到动态的效果。</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+     
+
+      
+    </footer>
+  </div>
+  
+</article>
+  
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CloudStack/">CloudStack</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Erlang开发/">Erlang开发</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Phalcon/">Phalcon</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/software/">software</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/summary/">summary</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开源框架/">开源框架</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏开发/">游戏开发</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活随记/">生活随记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络分享/">网络分享</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络营销/">网络营销</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计模式/">设计模式</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/风云印象/">风云印象</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/">.NET</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-pattern/">Design-pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Erlang/">Erlang</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT名人堂/">IT名人堂</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-游戏开发/">android 游戏开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vb-net/">vb.net</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webservice/">webservice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/人物/">人物</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电脑问题/">电脑问题</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/C/" style="font-size: 12.5px;">C++</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Design-pattern/" style="font-size: 10px;">Design-pattern</a> <a href="/tags/Erlang/" style="font-size: 12.5px;">Erlang</a> <a href="/tags/IT名人堂/" style="font-size: 12.5px;">IT名人堂</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/android-游戏开发/" style="font-size: 10px;">android 游戏开发</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/vb-net/" style="font-size: 10px;">vb.net</a> <a href="/tags/webservice/" style="font-size: 10px;">webservice</a> <a href="/tags/人物/" style="font-size: 10px;">人物</a> <a href="/tags/服务器/" style="font-size: 12.5px;">服务器</a> <a href="/tags/电脑问题/" style="font-size: 15px;">电脑问题</a> <a href="/tags/网站建设/" style="font-size: 10px;">网站建设</a> <a href="/tags/设计模式/" style="font-size: 12.5px;">设计模式</a> <a href="/tags/软件/" style="font-size: 10px;">软件</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">十一月 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">十月 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">九月 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">八月 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">五月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">三月 2013</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/CloudStack/cloudstack-Source-framework-analysis.html">cloudstack源码架构解析，二次开发必备</a>
+          </li>
+        
+          <li>
+            <a href="/summary/from-wordpress-to-hexo.html">from wordpress to hexo</a>
+          </li>
+        
+          <li>
+            <a href="/CloudStack/cloudstack-compile-single-module.html">cloudstack二次开发——编译单个模块来升级系统</a>
+          </li>
+        
+          <li>
+            <a href="/CloudStack/cloudstack-debug-port.html">cloudstack二次开发——配置Debug端口</a>
+          </li>
+        
+          <li>
+            <a href="/CloudStack/cannot-open-file-etccloudstackmanagementtomcat6-conf.html">cannot open file /etc/cloudstack/management/tomcat6.conf</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">LINKS</h3>
+    <div class="widget">
+    <ul>
+     
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives">Archives</a></li>
+        
+          <li><a href="http://baidu.com">Baidu</a></li>
+        
+          <li><a href="http://ijuer.com/">巨二博客</a></li>
+        
+          <li><a href="http://www.ihuaihuai.com/">坏坏博客</a></li>
+        
+          <li><a href="http://www.lyblog.net/">刘洋的博客</a></li>
+        
+          <li><a href="http://upliu.net/">刘静的博客</a></li>
+        
+          <li><a href="/links">Links</a></li>
+        
+        </ul>
+    </div>
+  </div>
+
+  
+
+</aside>
+
+
+        
+      </div>
+      <footer style="color:#fff;">
+  
+  <div class="ice-div ice-div-1-1" style="height:60px;background: #2c3d4f;line-height:60px;padding-left:20px">
+  	Powered by <a href="http://hexo.io/">Hexo</a> Theme by <a href="http://www.besdlab.cn">BESD</a>
+  </div>
+</footer>
+    </div>
+    
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
