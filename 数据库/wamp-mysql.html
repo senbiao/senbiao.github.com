@@ -79,7 +79,7 @@ border-radius: 0px;
 <header class="ice-menu ice-menu-hover">
 <div class="ice-menu-logo" style="font-family:'Microsoft YaHei'">
  
-     <a href="http://zhousenbiao.com"><img src="/img/logo.png" style="height:100%"></a>
+     <a href="http://senbiao.org"><img src="/img/logo.png" style="height:100%"></a>
      <style>
        .ice-menu-logo{
     background: none;
@@ -136,20 +136,20 @@ border-radius: 0px;
         <p>&nbsp; &nbsp; &nbsp; 每次重装系统或者重装wamp之后，都要重新搭建php开发环境，这不又来了。</p>
 <p>&nbsp; &nbsp; &nbsp; 有些东西久了没使用它，就容易生疏。像这里所说的wamp中的mysql密码、phpmyadmin密码等问题，我们在搭建环境的时候或许很快可以搞定，但时间久了要重新搞的时候又感觉有点麻烦了。因此这次我决定把这个过程给记录下来，以便以后翻阅。</p>
 <p>前提是wamp已经安装好了，那么第一步首先通过WAMP打开mysql控制台。</p>
-<p><a href="http://zhousenbiao.com/attachment/62/" title="QQ图片20131025120437.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3611043254.jpg" alt="QQ图片20131025120437.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/62/" title="QQ图片20131025120437.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3611043254.jpg" alt="QQ图片20131025120437.jpg"></a></p>
 <p>提示输入密码，因为现在是空，所以直接按回车。</p>
-<p><a href="http://zhousenbiao.com/attachment/63/" title="QQ图片20131025120721.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3266336872.jpg" alt="QQ图片20131025120721.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/63/" title="QQ图片20131025120721.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3266336872.jpg" alt="QQ图片20131025120721.jpg"></a></p>
 <p>然后输入&ldquo;use mysql&rdquo;，意思是使用mysql这个数据库，提示&ldquo;Database changed&rdquo;就行。</p>
-<p><a href="http://zhousenbiao.com/attachment/64/" title="QQ图片20131025120959.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3269423899.jpg" alt="QQ图片20131025120959.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/64/" title="QQ图片20131025120959.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3269423899.jpg" alt="QQ图片20131025120959.jpg"></a></p>
 <p>然后输入要修改的密码的sql语句&ldquo;update user set password=PASSWORD(‘admin’) where user=’root’;&rdquo;，注意，sql语句结尾的分号不能少，提示Query OK&hellip;&hellip;即可。</p>
-<p><a href="http://zhousenbiao.com/attachment/65/" title="QQ图片20131025121320.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3352295584.jpg" alt="QQ图片20131025121320.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/65/" title="QQ图片20131025121320.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/3352295584.jpg" alt="QQ图片20131025121320.jpg"></a></p>
 <p>最后输入&ldquo;flush privileges;&rdquo;，不输入这个的话，修改密码的操作不会生效的。</p>
-<p><a href="http://zhousenbiao.com/attachment/66/" title="QQ图片20131025121445.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/4294617675.jpg" alt="QQ图片20131025121445.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/66/" title="QQ图片20131025121445.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/4294617675.jpg" alt="QQ图片20131025121445.jpg"></a></p>
 <p>然后输入&ldquo;quit&rdquo;退出。</p>
 <p>&nbsp; &nbsp; &nbsp; 如果在浏览器中访问phpmyadmin出现如下错误：#1045 - Access denied for user ‘root’@’localhost’&nbsp;(using password: YES)&nbsp;</p>
-<p><a href="http://zhousenbiao.com/attachment/68/" title="QQ图片20131025121743.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/4140904756.jpg" alt="QQ图片20131025121743.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/68/" title="QQ图片20131025121743.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/4140904756.jpg" alt="QQ图片20131025121743.jpg"></a></p>
 <p>那么说明mysql的密码已修改了，但是phpmyadmin相对于的配置文件还未修改。请在wamp的phpmyadmin目录下找config.inc.php进行修改。比如我的电脑中，目录是E:\wamp\apps\phpmyadmin3.5.1，那么在这个目录下找到config.inc.php文件并打开，ctrl+F查找$cfg[‘Servers’][$i][‘password’]，将其改为$cfg[‘Servers’][$i][‘password’]=’admin’，admin即是修改后的密码。</p>
-<p><a href="http://zhousenbiao.com/attachment/67/" title="QQ图片20131025121450.jpg"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/2766738.jpg" alt="QQ图片20131025121450.jpg"></a></p>
+<p><a href="http://zhousenbiao.com/attachment/67/" title="QQ图片20131025121450.jpg" target="_blank" rel="external"><img src="http://zhousenbiao.com/wp-content/uploads/2013/10/2766738.jpg" alt="QQ图片20131025121450.jpg"></a></p>
 
       
     </div>
